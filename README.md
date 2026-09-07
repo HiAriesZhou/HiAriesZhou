@@ -16,7 +16,7 @@ Software engineer. Gamer. Dad. Staff to two cats.
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
-  <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.3.0 · 2026-08-25</li>
+  <li><a href="https://bookmarkassistant.com">Bookmark Assistant</a> v1.3.2 · 2026-09-07</li>
   <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.4.7">X-TOC</a> v0.4.7 · 2026-06-17</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
@@ -25,9 +25,9 @@ Software engineer. Gamer. Dad. Staff to two cats.
 
 <!-- PROFILE_POSTS:START -->
 <ul>
-  <li><a href="https://arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">AI Doesn't Understand &quot;That Earlier One&quot;</a> · 2026-08-28</li>
-  <li><a href="https://arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
-  <li><a href="https://arieszhou.com/blog/singles">Singles</a> · 2026-08-05</li>
+  <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">AI Doesn't Understand &quot;That Earlier One&quot;</a> · 2026-08-28</li>
+  <li><a href="https://www.arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
+  <li><a href="https://www.arieszhou.com/blog/singles">Singles</a> · 2026-08-05</li>
 </ul>
 <!-- PROFILE_POSTS:END -->
 <!-- PROFILE_ACTIVITY:END -->
