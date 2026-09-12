@@ -16,8 +16,8 @@ Software engineer. Gamer. Dad. Staff to two cats.
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.4.8">X-TOC</a> v0.4.8 · 2026-09-12</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.3.2 · 2026-09-07</li>
-  <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.4.7">X-TOC</a> v0.4.7 · 2026-06-17</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
 
