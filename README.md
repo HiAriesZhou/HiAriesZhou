@@ -1,14 +1,25 @@
 ### Hi, I'm Aries 👋
 
-Most of my projects start with something that keeps bothering me.
+I make software, usually because something keeps bothering me long enough.
 
-X articles were hard to navigate, so I made [X-TOC](https://github.com/HiAriesZhou/x-toc). My browser links kept piling up, so I made [Bookmark Assistant](https://bookmarkassistant.com/). AI agents kept forgetting how a project got here, so now I'm working on [LiteContext](https://litecontext.dev/).
+[X-TOC](https://github.com/HiAriesZhou/x-toc) started with getting lost in long X Articles.  
+[Bookmark Assistant](https://bookmarkassistant.com/) started with too many links and nowhere useful to put them.
 
-I write about what I'm learning and the rabbit holes that start with something I've read. Games and badminton find their way in too.
+[LiteContext](https://litecontext.dev/) is a little different.
 
-Software engineer. Gamer. Dad. Staff to two cats.
+It's still early. I'm using it to explore a broader question I'm increasingly curious about:
 
-[Home](https://arieszhou.com/) · [X](https://x.com/AriesBlabla)
+> What makes context valuable — and how do we preserve, surface, connect, and reuse it?
+
+Coding agents are one part of that, but I don't think the idea stops there.
+
+I write about what I'm building, what I'm learning, and the rabbit holes I fall into along the way.
+
+Games, anime, badminton, and other distractions show up too.
+
+**Software engineer · indie builder on the side · gamer · dad · staff to two cats**
+
+[Home](https://arieszhou.com/) · [X](https://x.com/AriesZhou)
 
 
 <!-- PROFILE_ACTIVITY:START -->
