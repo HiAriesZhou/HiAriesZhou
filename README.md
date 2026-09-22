@@ -2,12 +2,12 @@
 
 I make software, usually because something keeps bothering me long enough.
 
-<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.<br>
-<a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" alt="Bookmark Assistant icon"> Bookmark Assistant</a> started with too many links and nowhere useful to put them.
+<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" align="middle" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.<br>
+<a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="middle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> started with too many links and nowhere useful to put them.
 
-<a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" alt="DashBye icon"> DashBye</a> started with spending too much time in the Chrome Web Store dashboard just to ship an update.
+<a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="middle" alt="DashBye icon"> DashBye</a> started with spending too much time in the Chrome Web Store dashboard just to ship an update.
 
-<a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" alt="LiteContext icon"> LiteContext</a> is a little different.
+<a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="middle" alt="LiteContext icon"> LiteContext</a> is a little different.
 
 It's still early. I'm using it to explore a broader question I'm increasingly curious about:
 
