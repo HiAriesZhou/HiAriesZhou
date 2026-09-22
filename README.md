@@ -1,4 +1,4 @@
-### Hi, I'm Aries 👋
+### Hi, it's Aries 👋
 
 I make software, usually because something keeps bothering me long enough.
 
