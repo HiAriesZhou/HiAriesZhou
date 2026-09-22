@@ -2,7 +2,8 @@
 
 I make software, usually because something keeps bothering me long enough.
 
-<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" align="absmiddle" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.<br>
+<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" align="absmiddle" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.
+
 <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> started with too many links and nowhere useful to put them.
 
 <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> started with spending too much time in the Chrome Web Store dashboard just to ship an update.
