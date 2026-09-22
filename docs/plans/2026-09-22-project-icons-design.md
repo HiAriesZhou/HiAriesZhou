@@ -14,9 +14,13 @@ recognize without turning the introduction into a card grid or project list.
   in the README.
 - Place each icon immediately before its linked project name while preserving
   the current introduction and links.
-- Set `align="middle"` on each image so GitHub aligns it with the surrounding
-  text. GitHub preserves this attribute but strips inline `vertical-align`
-  styles.
+- Set `align="absmiddle"` on each image. Unlike `middle`, which still aligns
+  against the text baseline, `absmiddle` centers the image against the full
+  line box. GitHub preserves this attribute but strips inline
+  `vertical-align` styles.
+- Normalize the visible artwork inside each 64 × 64 canvas so all four icons
+  have comparable optical size while their rendered boxes and text starting
+  positions remain identical.
 - Give every image concise alternative text.
 - Leave the generated "Latest releases" section unchanged.
 
@@ -25,6 +29,8 @@ recognize without turning the introduction into a card grid or project list.
 - Confirm all four PNG files are 64 × 64 and reasonably small.
 - Check that README image paths and project links resolve.
 - Render the relevant markup through GitHub's Markdown API and confirm the
-  middle-alignment attribute survives sanitization.
+  absolute-middle alignment attribute survives sanitization.
+- Inspect the published profile rather than treating sanitizer output alone as
+  proof of visual alignment.
 - Run the profile updater against a temporary README to ensure the generated
   activity block remains intact.
