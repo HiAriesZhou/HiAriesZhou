@@ -2,12 +2,12 @@
 
 I make software, usually because something keeps bothering me long enough.
 
-[X-TOC](https://github.com/HiAriesZhou/x-toc) started with getting lost in long X Articles.  
-[Bookmark Assistant](https://bookmarkassistant.com/) started with too many links and nowhere useful to put them.
+<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.<br>
+<a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" alt="Bookmark Assistant icon"> Bookmark Assistant</a> started with too many links and nowhere useful to put them.
 
-[DashBye](https://github.com/HiAriesZhou/DashBye) started with spending too much time in the Chrome Web Store dashboard just to ship an update.
+<a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" alt="DashBye icon"> DashBye</a> started with spending too much time in the Chrome Web Store dashboard just to ship an update.
 
-[LiteContext](https://litecontext.dev/) is a little different.
+<a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" alt="LiteContext icon"> LiteContext</a> is a little different.
 
 It's still early. I'm using it to explore a broader question I'm increasingly curious about:
 
@@ -29,6 +29,7 @@ Games, anime, badminton, and other distractions show up too.
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.2.0">DashBye</a> v0.2.0 · 2026-09-22</li>
   <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.5.1">X-TOC</a> v0.5.1 · 2026-09-22</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.1 · 2026-09-17</li>
 </ul>
