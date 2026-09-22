@@ -5,6 +5,8 @@ I make software, usually because something keeps bothering me long enough.
 [X-TOC](https://github.com/HiAriesZhou/x-toc) started with getting lost in long X Articles.  
 [Bookmark Assistant](https://bookmarkassistant.com/) started with too many links and nowhere useful to put them.
 
+[DashBye](https://github.com/HiAriesZhou/DashBye) started with spending too much time in the Chrome Web Store dashboard just to ship an update.
+
 [LiteContext](https://litecontext.dev/) is a little different.
 
 It's still early. I'm using it to explore a broader question I'm increasingly curious about:

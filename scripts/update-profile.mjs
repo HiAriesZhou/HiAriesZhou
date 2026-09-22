@@ -11,7 +11,7 @@ const END_MARKER = "<!-- PROFILE_ACTIVITY:END -->";
 const config = {
   releaseRepos: parseReleaseRepos(
     process.env.RELEASE_REPOS ||
-    "HiAriesZhou/x-toc,HiAriesZhou/litecontext"
+    "HiAriesZhou/x-toc,HiAriesZhou/litecontext,HiAriesZhou/DashBye"
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",
@@ -29,6 +29,7 @@ const releaseNames = {
   litecontext: "LiteContext",
   "x-toc": "X-TOC",
   "bookmark-assistant": "Bookmark Assistant",
+  DashBye: "DashBye",
 };
 const readme = await readFile(README_PATH, "utf8");
 const previousContent = extractPreviousContent(readme);
