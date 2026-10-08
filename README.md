@@ -30,9 +30,9 @@ Games, anime, badminton, and other distractions show up too.
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.6.0">X-TOC</a> v0.6.0 · 2026-10-08</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
   <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.2.4">DashBye</a> v0.2.4 · 2026-09-29</li>
-  <li><a href="https://github.com/HiAriesZhou/x-toc/releases/tag/v0.5.2">X-TOC</a> v0.5.2 · 2026-09-28</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
 
