@@ -46,9 +46,9 @@ Games, anime, badminton, and other distractions show up too.
 
 <!-- PROFILE_POSTS:START -->
 <ul>
+  <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">After Reverse Engineering Gets Easy</a> · 2026-10-14</li>
   <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">From a Rooftop in Dali to Pixel Avatars</a> · 2026-09-07</li>
   <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">AI Doesn't Understand &quot;That Earlier One&quot;</a> · 2026-08-28</li>
-  <li><a href="https://www.arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
 </ul>
 <!-- PROFILE_POSTS:END -->
 <!-- PROFILE_ACTIVITY:END -->
