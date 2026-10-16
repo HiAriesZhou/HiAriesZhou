@@ -36,8 +36,8 @@ Games, anime, badminton, and other distractions show up too.
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.4.3">DashBye</a> v0.4.3 · 2026-10-15</li>
   <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.7.0">X-TOC</a> v0.7.0 · 2026-10-14</li>
-  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.4.2">DashBye</a> v0.4.2 · 2026-10-12</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
@@ -46,9 +46,9 @@ Games, anime, badminton, and other distractions show up too.
 
 <!-- PROFILE_POSTS:START -->
 <ul>
-  <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">After Reverse Engineering Gets Easy</a> · 2026-10-14</li>
-  <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">From a Rooftop in Dali to Pixel Avatars</a> · 2026-09-07</li>
-  <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">AI Doesn't Understand &quot;That Earlier One&quot;</a> · 2026-08-28</li>
+  <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a> · 2026-10-14</li>
+  <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a> · 2026-09-07</li>
+  <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">When AI Misunderstands</a> · 2026-08-28</li>
 </ul>
 <!-- PROFILE_POSTS:END -->
 <!-- PROFILE_ACTIVITY:END -->
