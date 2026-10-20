@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/console/profile-console-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/console/profile-console-light.svg">
-  <img src="assets/console/profile-console-light.svg" width="830" alt="Aries Zhou's build station: Arimo (pixel Aries) coding on the sofa, the X-TOC and Bookmark Assistant birds flying overhead, and the DashBye gecko crawling along the bottom (its tail drops off and grows back).">
+  <img src="assets/console/profile-console-light.svg" width="830" alt="Aries Zhou: Arimo (pixel Aries) coding on a beanbag, next to the tagline and four projects: X-TOC, Bookmark Assistant, DashBye and LiteContext.">
 </picture>
 
 ### Hi, it's Aries 👋
