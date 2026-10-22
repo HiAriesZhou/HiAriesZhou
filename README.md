@@ -1,28 +1,27 @@
 ### Hi, it's Aries 👋
 
-I make software, usually because something keeps bothering me long enough.
+*Building what I need, keeping what matters.*
 
-<a href="https://github.com/HiAriesZhou/x-toc"><img src="assets/projects/x-toc.png" width="18" height="18" align="absmiddle" alt="X-TOC icon"> X-TOC</a> started with getting lost in long X Articles.
+I've been a software engineer for over nine years — data security for video conferencing first, open-source private cloud storage these days. On the side, I build small tools for myself and ship them in public.
 
-<a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> started with too many links and nowhere useful to put them.
+Most of them start as a complaint:
 
-<a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> started with spending too much time in the Chrome Web Store dashboard just to ship an update.
-
-<a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> is a little different.
-
-It's still early. I'm using it to explore a broader question I'm increasingly curious about:
+- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/x-toc.png" width="18" height="18" align="absmiddle" alt="X-TOC icon"> X-TOC</a> — long X Articles with no table of contents.
+- <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — bookmarks that pile up and barely get used.
+- <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — half an hour in the Chrome Web Store dashboard every time a release needs new assets.
+- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — a different one, still early. It's how I'm exploring a question I keep coming back to:
 
 > What makes context valuable — and how do we preserve, surface, connect, and reuse it?
 
-Coding agents are one part of that, but I don't think the idea stops there.
+AI is what lets me build these without being held back by limited energy or stacks I don't know yet. They fit my own habits first; if they fit yours too, even better.
 
-I write about what I'm building, what I'm learning, and the rabbit holes I fall into along the way.
+I write about what I build, what I learn, and the rabbit holes in between. Games, anime, and badminton show up too. If you also can't stand AI slop and clickbait, we'll probably get along.
 
-Games, anime, badminton, and other distractions show up too.
+Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
 
-**Software engineer · indie builder on the side · gamer · dad · staff to two cats**
+**Dad · staff to two cats · gamer · badminton**
 
-[Home](https://arieszhou.com/) · [X](https://x.com/AriesZhou)
+[Home](https://arieszhou.com/) · [About](https://arieszhou.com/about) · [X](https://x.com/AriesZhou)
 
 
 <!-- PROFILE_ACTIVITY:START -->
