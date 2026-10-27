@@ -4,12 +4,12 @@
 
 I've been a software engineer for over nine years — data security for video conferencing first, open-source private cloud storage these days. On the side, I build small tools for myself and ship them in public.
 
-Most of them start as a complaint:
+Each one fixes something I kept running into:
 
-- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — long X Articles with no table of contents.
-- <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — bookmarks that pile up and barely get used.
-- <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — half an hour in the Chrome Web Store dashboard every time a release needs new assets.
-- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — a different one, still early. It's how I'm exploring a question I keep coming back to:
+- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — adds a table of contents to long X Articles and lets you clip the passages worth keeping.
+- <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — sorts and tags your bookmarks, so the ones you save actually get used.
+- <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — syncs Chrome Web Store packages, listings, and artwork from your repo, so a release no longer means half an hour in the dashboard.
+- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early, and it's how I'm exploring a question I keep coming back to:
 
 > What makes context valuable — and how do we preserve, surface, connect, and reuse it?
 
