@@ -29,8 +29,8 @@ Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">X-TOC</a> v0.9.0 · 2026-10-27</li>
   <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.6.1">DashBye</a> v0.6.1 · 2026-10-21</li>
-  <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.8.0">X-TOC</a> v0.8.0 · 2026-10-20</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
