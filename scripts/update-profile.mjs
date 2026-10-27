@@ -11,7 +11,7 @@ const END_MARKER = "<!-- PROFILE_ACTIVITY:END -->";
 const config = {
   releaseRepos: parseReleaseRepos(
     process.env.RELEASE_REPOS ||
-    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye"
+    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler"
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",

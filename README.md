@@ -9,6 +9,8 @@ Each one fixes something I kept running into:
 - <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — adds a table of contents to long X Articles and lets you clip the passages worth keeping.
 - <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — sorts and tags your bookmarks, so the ones you save actually get used.
 - <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — syncs Chrome Web Store packages, listings, and artwork from your repo, so a release no longer means half an hour in the dashboard.
+- <a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a> — brings back the menu bar icons hidden behind the MacBook notch.
+- <a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a> — answers quick AI questions in a sealed letter that burns once you've read it, like its namesake.
 - <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early, and it's how I'm exploring a question I keep coming back to:
 
 > What makes context valuable — and how do we preserve, surface, connect, and reuse it?
@@ -29,6 +31,8 @@ Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.3">Howler</a> v0.1.3 · 2026-10-27</li>
+  <li><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.2.0">Hairpin</a> v0.2.0 · 2026-10-27</li>
   <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">XTOC</a> v0.9.0 · 2026-10-27</li>
   <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.6.1">DashBye</a> v0.6.1 · 2026-10-21</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
