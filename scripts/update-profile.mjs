@@ -15,7 +15,8 @@ const config = {
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",
-  postLimit: Number(process.env.POST_LIMIT || 3),
+  releaseLimit: Number(process.env.RELEASE_LIMIT || 5),
+  postLimit: Number(process.env.POST_LIMIT || 5),
   titleMaxLength: Number(process.env.TITLE_MAX_LENGTH || 60),
   githubApiBaseUrl: process.env.GITHUB_API_BASE_URL || "https://api.github.com",
   bookmarkAssistantReleasePath: resolve(
@@ -45,7 +46,8 @@ const releaseContent = contentFromResult(
   releaseResult,
   "No releases found yet.",
   previousContent.releases,
-  bookmarkAssistantRelease ? [bookmarkAssistantRelease] : []
+  bookmarkAssistantRelease ? [bookmarkAssistantRelease] : [],
+  config.releaseLimit
 );
 const postContent = contentFromResult(
   "posts",
@@ -340,10 +342,14 @@ function contentFromResult(
   result,
   emptyLabel,
   fallbackContent,
-  extraItems = []
+  extraItems = [],
+  limit = Infinity
 ) {
   if (result.status === "fulfilled") {
-    return renderList(sortItems([...extraItems, ...result.value]), emptyLabel);
+    return renderList(
+      sortItems([...extraItems, ...result.value]).slice(0, limit),
+      emptyLabel
+    );
   }
 
   console.warn(
