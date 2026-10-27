@@ -46,6 +46,8 @@ Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
   <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a> · 2026-10-14</li>
   <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a> · 2026-09-07</li>
   <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">When AI Misunderstands</a> · 2026-08-28</li>
+  <li><a href="https://www.arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
+  <li><a href="https://www.arieszhou.com/blog/singles">Badminton Singles</a> · 2026-08-05</li>
 </ul>
 <!-- PROFILE_POSTS:END -->
 <!-- PROFILE_ACTIVITY:END -->

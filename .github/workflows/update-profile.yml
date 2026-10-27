@@ -29,7 +29,8 @@ jobs:
           RELEASE_REPOS: HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler
           BOOKMARK_ASSISTANT_RELEASE_PAYLOAD: ${{ toJson(github.event.client_payload) }}
           BLOG_FEED_URL: https://arieszhou.com/rss.en.xml
-          POST_LIMIT: 3
+          RELEASE_LIMIT: 5
+          POST_LIMIT: 5
           TITLE_MAX_LENGTH: 60
 
       - name: Commit changes
