@@ -6,7 +6,7 @@ I've been a software engineer for over nine years — data security for video co
 
 Most of them start as a complaint:
 
-- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/x-toc.png" width="18" height="18" align="absmiddle" alt="X-TOC icon"> X-TOC</a> — long X Articles with no table of contents.
+- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — long X Articles with no table of contents.
 - <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — bookmarks that pile up and barely get used.
 - <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — half an hour in the Chrome Web Store dashboard every time a release needs new assets.
 - <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — a different one, still early. It's how I'm exploring a question I keep coming back to:
@@ -29,7 +29,7 @@ Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
-  <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">X-TOC</a> v0.9.0 · 2026-10-27</li>
+  <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">XTOC</a> v0.9.0 · 2026-10-27</li>
   <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.6.1">DashBye</a> v0.6.1 · 2026-10-21</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
 </ul>

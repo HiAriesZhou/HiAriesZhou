@@ -11,7 +11,7 @@ const END_MARKER = "<!-- PROFILE_ACTIVITY:END -->";
 const config = {
   releaseRepos: parseReleaseRepos(
     process.env.RELEASE_REPOS ||
-    "HiAriesZhou/x-toc,HiAriesZhou/litecontext,HiAriesZhou/DashBye"
+    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye"
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",
@@ -27,7 +27,7 @@ const config = {
 const token = process.env.GITHUB_TOKEN;
 const releaseNames = {
   litecontext: "LiteContext",
-  "x-toc": "X-TOC",
+  xtoc: "XTOC",
   "bookmark-assistant": "Bookmark Assistant",
   DashBye: "DashBye",
 };
