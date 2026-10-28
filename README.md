@@ -13,15 +13,7 @@ Each one fixes something I kept running into:
 - <a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a> — answers quick AI questions in a sealed letter that burns once you've read it, like its namesake.
 - <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early, and it's how I'm exploring a question I keep coming back to:
 
-> What makes context valuable — and how do we preserve, surface, connect, and reuse it?
-
 AI is what lets me build these without being held back by limited energy or stacks I don't know yet. They fit my own habits first; if they fit yours too, even better.
-
-I write about what I build, what I learn, and the rabbit holes in between. Games, anime, and badminton show up too. If you also can't stand AI slop and clickbait, we'll probably get along.
-
-Got a good idea and need an engineer? Say hi on [X](https://x.com/AriesZhou).
-
-**Dad · staff to two cats · gamer · badminton**
 
 [Home](https://arieszhou.com/) · [About](https://arieszhou.com/about) · [X](https://x.com/AriesZhou)
 
