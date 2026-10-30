@@ -11,7 +11,7 @@ Each one fixes something I kept running into:
 - <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — syncs Chrome Web Store packages, listings, and artwork from your repo, so a release no longer means half an hour in the dashboard.
 - <a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a> — brings back the menu bar icons hidden behind the MacBook notch.
 - <a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a> — answers quick AI questions in a sealed letter that burns once you've read it, like its namesake.
-- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early, and it's how I'm exploring a question I keep coming back to:
+- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early...
 
 AI is what lets me build these without being held back by limited energy or stacks I don't know yet. They fit my own habits first; if they fit yours too, even better.
 
