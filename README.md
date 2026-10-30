@@ -23,10 +23,10 @@ AI is what lets me build these without being held back by limited energy or stac
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
-  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.7">Howler</a> v0.1.7 · 2026-10-29</li>
-  <li><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.2.0">Hairpin</a> v0.2.0 · 2026-10-27</li>
+  <li><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.2.2">Hairpin</a> v0.2.2 · 2026-10-29</li>
+  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.7.0">DashBye</a> v0.7.0 · 2026-10-29</li>
+  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.11">Howler</a> v0.1.11 · 2026-10-29</li>
   <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">XTOC</a> v0.9.0 · 2026-10-27</li>
-  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.6.1">DashBye</a> v0.6.1 · 2026-10-21</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
 </ul>
 <!-- PROFILE_RELEASES:END -->
