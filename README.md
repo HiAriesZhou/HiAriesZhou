@@ -23,8 +23,8 @@ AI is what lets me build these without being held back by limited energy or stac
 
 <!-- PROFILE_RELEASES:START -->
 <ul>
+  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.14">Howler</a> v0.1.14 · 2026-11-09</li>
   <li><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.0">Hairpin</a> v0.3.0 · 2026-11-04</li>
-  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.13">Howler</a> v0.1.13 · 2026-10-31</li>
   <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.7.1">DashBye</a> v0.7.1 · 2026-10-30</li>
   <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">XTOC</a> v0.9.0 · 2026-10-27</li>
   <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
@@ -35,11 +35,11 @@ AI is what lets me build these without being held back by limited energy or stac
 
 <!-- PROFILE_POSTS:START -->
 <ul>
+  <li><a href="https://www.arieszhou.com/blog/do-you-still-need-a-terminal-why-i-chose-kaku">Do You Still Need a Terminal? Why I Chose Kaku</a> · 2026-11-09</li>
   <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a> · 2026-10-14</li>
   <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a> · 2026-09-07</li>
   <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">When AI Misunderstands</a> · 2026-08-28</li>
   <li><a href="https://www.arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
-  <li><a href="https://www.arieszhou.com/blog/singles">Badminton Singles</a> · 2026-08-05</li>
 </ul>
 <!-- PROFILE_POSTS:END -->
 <!-- PROFILE_ACTIVITY:END -->
