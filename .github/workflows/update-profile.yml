@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Test updater
+        run: node --test scripts/*.test.mjs
+
       - name: Update README activity
         run: node scripts/update-profile.mjs
         env:
@@ -29,8 +32,7 @@ jobs:
           RELEASE_REPOS: HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler
           BOOKMARK_ASSISTANT_RELEASE_PAYLOAD: ${{ toJson(github.event.client_payload) }}
           BLOG_FEED_URL: https://arieszhou.com/rss.en.xml
-          RELEASE_LIMIT: 5
-          POST_LIMIT: 5
+          POST_LIMIT: 3
           TITLE_MAX_LENGTH: 60
 
       - name: Commit changes

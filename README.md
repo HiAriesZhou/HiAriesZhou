@@ -1,45 +1,14 @@
 ### Hi, it's Aries 👋
 
-*Building what I need, keeping what matters.*
+Software engineer for nine years — data security for video conferencing first, open-source private cloud storage these days. On the side I build small tools that fix things I keep running into, with AI covering the stacks I don't know yet, and ship them in public.
 
-I've been a software engineer for over nine years — data security for video conferencing first, open-source private cloud storage these days. On the side, I build small tools for myself and ship them in public.
+- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — a table of contents and clipper for long X Articles<!-- RELEASE:xtoc:START --> · <a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">v0.9.0</a><!-- RELEASE:xtoc:END -->
+- <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — organizes bookmarks so they get used<!-- RELEASE:bookmark-assistant:START --> · <a href="https://bookmarkassistant.com/">v1.4.3</a><!-- RELEASE:bookmark-assistant:END -->
+- <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — Chrome Web Store publishing from your repo<!-- RELEASE:dashbye:START --> · <a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.7.1">v0.7.1</a><!-- RELEASE:dashbye:END -->
+- <a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a> — brings back menu bar icons hidden by the notch<!-- RELEASE:hairpin:START --> · <a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.0">v0.3.0</a><!-- RELEASE:hairpin:END -->
+- <a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a> — quick AI answers in a letter that burns once read<!-- RELEASE:howler:START --> · <a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.14">v0.1.14</a><!-- RELEASE:howler:END -->
+- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — lets AI tools search your notes and files. Still early.<!-- RELEASE:litecontext:START --><!-- RELEASE:litecontext:END -->
 
-Each one fixes something I kept running into:
-
-- <a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a> — adds a table of contents to long X Articles and lets you clip the passages worth keeping.
-- <a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a> — sorts and tags your bookmarks, so the ones you save actually get used.
-- <a href="https://github.com/HiAriesZhou/DashBye"><img src="assets/projects/dashbye.png" width="18" height="18" align="absmiddle" alt="DashBye icon"> DashBye</a> — syncs Chrome Web Store packages, listings, and artwork from your repo, so a release no longer means half an hour in the dashboard.
-- <a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a> — brings back the menu bar icons hidden behind the MacBook notch.
-- <a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a> — answers quick AI questions in a sealed letter that burns once you've read it, like its namesake.
-- <a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a> — turns your notes and local files into knowledge AI tools can search and cite. Still early...
-
-AI is what lets me build these without being held back by limited energy or stacks I don't know yet. They fit my own habits first; if they fit yours too, even better.
+**Writing** — <!-- PROFILE_POSTS:START --><a href="https://www.arieszhou.com/blog/do-you-still-need-a-terminal-why-i-chose-kaku">Do You Still Need a Terminal? Why I Chose Kaku</a> · <a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a> · <a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a><!-- PROFILE_POSTS:END -->
 
 [Home](https://arieszhou.com/) · [About](https://arieszhou.com/about) · [X](https://x.com/AriesZhou)
-
-
-<!-- PROFILE_ACTIVITY:START -->
-### Latest releases
-
-<!-- PROFILE_RELEASES:START -->
-<ul>
-  <li><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.14">Howler</a> v0.1.14 · 2026-11-09</li>
-  <li><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.0">Hairpin</a> v0.3.0 · 2026-11-04</li>
-  <li><a href="https://github.com/HiAriesZhou/DashBye/releases/tag/v0.7.1">DashBye</a> v0.7.1 · 2026-10-30</li>
-  <li><a href="https://github.com/HiAriesZhou/xtoc/releases/tag/v0.9.0">XTOC</a> v0.9.0 · 2026-10-27</li>
-  <li><a href="https://bookmarkassistant.com/">Bookmark Assistant</a> v1.4.3 · 2026-10-05</li>
-</ul>
-<!-- PROFILE_RELEASES:END -->
-
-### Recent writing
-
-<!-- PROFILE_POSTS:START -->
-<ul>
-  <li><a href="https://www.arieszhou.com/blog/do-you-still-need-a-terminal-why-i-chose-kaku">Do You Still Need a Terminal? Why I Chose Kaku</a> · 2026-11-09</li>
-  <li><a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a> · 2026-10-14</li>
-  <li><a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a> · 2026-09-07</li>
-  <li><a href="https://www.arieszhou.com/blog/ai-doesnt-understand-that-earlier-one">When AI Misunderstands</a> · 2026-08-28</li>
-  <li><a href="https://www.arieszhou.com/blog/readme-landingpage-guide">README? LandingPage</a> · 2026-08-25</li>
-</ul>
-<!-- PROFILE_POSTS:END -->
-<!-- PROFILE_ACTIVITY:END -->
