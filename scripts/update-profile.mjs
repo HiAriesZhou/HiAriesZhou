@@ -5,8 +5,8 @@ import { pathToFileURL } from "node:url";
 const README_PATH = process.env.README_PATH
   ? pathToFileURL(resolve(process.env.README_PATH))
   : new URL("../README.md", import.meta.url);
-const START_MARKER = "<!-- PROFILE_ACTIVITY:START -->";
-const END_MARKER = "<!-- PROFILE_ACTIVITY:END -->";
+const POSTS_MARKER = "PROFILE_POSTS";
+const BOOKMARK_ASSISTANT_KEY = "bookmark-assistant";
 
 const config = {
   releaseRepos: parseReleaseRepos(
@@ -15,8 +15,7 @@ const config = {
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",
-  releaseLimit: Number(process.env.RELEASE_LIMIT || 5),
-  postLimit: Number(process.env.POST_LIMIT || 5),
+  postLimit: Number(process.env.POST_LIMIT || 3),
   titleMaxLength: Number(process.env.TITLE_MAX_LENGTH || 60),
   githubApiBaseUrl: process.env.GITHUB_API_BASE_URL || "https://api.github.com",
   bookmarkAssistantReleasePath: resolve(
@@ -26,14 +25,7 @@ const config = {
 };
 
 const token = process.env.GITHUB_TOKEN;
-const releaseNames = {
-  litecontext: "LiteContext",
-  xtoc: "XTOC",
-  "bookmark-assistant": "Bookmark Assistant",
-  DashBye: "DashBye",
-};
 const readme = await readFile(README_PATH, "utf8");
-const previousContent = extractPreviousContent(readme);
 const bookmarkAssistantRelease = await loadBookmarkAssistantRelease();
 
 const [releaseResult, postResult] = await Promise.allSettled([
@@ -41,23 +33,21 @@ const [releaseResult, postResult] = await Promise.allSettled([
   getPosts(config.blogFeedUrl, config.postLimit),
 ]);
 
-const releaseContent = contentFromResult(
-  "releases",
-  releaseResult,
-  "No releases found yet.",
-  previousContent.releases,
-  bookmarkAssistantRelease ? [bookmarkAssistantRelease] : [],
-  config.releaseLimit
-);
-const postContent = contentFromResult(
-  "posts",
-  postResult,
-  "No posts found yet.",
-  previousContent.posts
-);
+const releases = [
+  ...(bookmarkAssistantRelease ? [bookmarkAssistantRelease] : []),
+  ...valueOrWarn("releases", releaseResult, []),
+];
+const posts = valueOrWarn("posts", postResult, null);
 
-const block = renderBlock(releaseContent, postContent);
-const nextReadme = replaceBlock(readme, block);
+const withReleases = releases.reduce(
+  (text, release) =>
+    replaceMarked(text, `RELEASE:${release.key}`, renderRelease(release)),
+  readme
+);
+const nextReadme =
+  posts && posts.length > 0
+    ? replaceMarked(withReleases, POSTS_MARKER, renderPosts(posts))
+    : withReleases;
 
 if (nextReadme !== readme) {
   await writeFile(README_PATH, nextReadme);
@@ -78,7 +68,7 @@ async function loadBookmarkAssistantRelease() {
         {
           version: payloadRelease.version,
           url: payloadRelease.url,
-          published_at: payloadRelease.sortDate,
+          published_at: payloadRelease.publishedAt,
         },
         null,
         2
@@ -120,11 +110,10 @@ function parseBookmarkAssistantRelease(value) {
     cleanText(payload.published_at) || new Date().toISOString();
 
   return {
-    name: releaseNames["bookmark-assistant"],
+    key: BOOKMARK_ASSISTANT_KEY,
     version,
-    url: publicUrl(payload.url) || "https://bookmarkassistant.com",
-    date: formatDate(publishedAt),
-    sortDate: publishedAt,
+    url: publicUrl(payload.url) || "https://bookmarkassistant.com/",
+    publishedAt,
   };
 }
 
@@ -155,7 +144,7 @@ async function getReleases(repos, githubApiBaseUrl) {
       });
 
       if (response.status === 404) {
-        return [];
+        return null;
       }
 
       if (!response.ok) {
@@ -175,21 +164,14 @@ async function getReleases(repos, githubApiBaseUrl) {
       }
 
       return {
-        name: releaseNames[repo] || toDisplayName(repo),
+        key: repo.toLowerCase(),
         version: releaseLabel(latestRelease),
         url: latestRelease.html_url,
-        date: formatDate(
-          latestRelease.published_at || latestRelease.created_at
-        ),
-        sortDate: latestRelease.published_at || latestRelease.created_at,
       };
     })
   );
 
-  return releases
-    .flat()
-    .filter(Boolean)
-    .sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
+  return releases.filter(Boolean);
 }
 
 async function getPosts(feedUrl, limit) {
@@ -337,19 +319,9 @@ function compareSemver(a, b) {
   return 0;
 }
 
-function contentFromResult(
-  label,
-  result,
-  emptyLabel,
-  fallbackContent,
-  extraItems = [],
-  limit = Infinity
-) {
+function valueOrWarn(label, result, fallback) {
   if (result.status === "fulfilled") {
-    return renderList(
-      sortItems([...extraItems, ...result.value]).slice(0, limit),
-      emptyLabel
-    );
+    return result.value;
   }
 
   console.warn(
@@ -357,98 +329,28 @@ function contentFromResult(
       result.reason
     )}`
   );
-
-  if (extraItems.length > 0) {
-    return renderList(extraItems, emptyLabel);
-  }
-
-  return fallbackContent || renderList([], emptyLabel);
+  return fallback;
 }
 
 function errorMessage(error) {
   return error?.stack || error?.message || String(error);
 }
 
-function extractPreviousContent(readme) {
-  const start = readme.indexOf(START_MARKER);
-  const end = readme.indexOf(END_MARKER);
-
-  if (start === -1 || end === -1 || end < start) {
-    return { releases: "", posts: "" };
-  }
-
-  const block = readme.slice(start, end + END_MARKER.length);
-  const releaseContent = extractMarkedContent(
-    block,
-    "PROFILE_RELEASES:START",
-    "PROFILE_RELEASES:END"
-  );
-  const postContent = extractMarkedContent(
-    block,
-    "PROFILE_POSTS:START",
-    "PROFILE_POSTS:END"
-  );
-
-  if (releaseContent || postContent) {
-    return { releases: releaseContent, posts: postContent };
-  }
-
-  const cells = Array.from(
-    block.matchAll(/<td\b[^>]*>\s*([\s\S]*?)\s*<\/td>/gi),
-    (match) => match[1].trim()
-  );
-
-  return {
-    releases: cells[0] || "",
-    posts: cells[1] || "",
-  };
+function renderRelease(release) {
+  const version = escapeHtml(release.version);
+  const versionHtml = release.url
+    ? `<a href="${escapeHtml(release.url)}">${version}</a>`
+    : version;
+  return ` · ${versionHtml}`;
 }
 
-function extractMarkedContent(block, startMarker, endMarker) {
-  const start = block.indexOf(`<!-- ${startMarker} -->`);
-  const end = block.indexOf(`<!-- ${endMarker} -->`);
-
-  if (start === -1 || end === -1 || end < start) {
-    return "";
-  }
-
-  return block
-    .slice(start + `<!-- ${startMarker} -->`.length, end)
-    .trim();
-}
-
-function renderBlock(releaseContent, postContent) {
-  return `${START_MARKER}
-### Latest releases
-
-<!-- PROFILE_RELEASES:START -->
-${releaseContent}
-<!-- PROFILE_RELEASES:END -->
-
-### Recent writing
-
-<!-- PROFILE_POSTS:START -->
-${postContent}
-<!-- PROFILE_POSTS:END -->
-${END_MARKER}`;
-}
-
-function renderList(items, emptyLabel = "No items found yet.") {
-  if (items.length === 0) {
-    return escapeHtml(emptyLabel);
-  }
-
-  const lines = items.map((item) => {
-    const name = truncateMiddle(item.name || item.title, config.titleMaxLength);
-    const nameHtml = item.url
-      ? `<a href="${escapeHtml(item.url)}">${escapeHtml(name)}</a>`
-      : escapeHtml(name);
-    const version = item.version ? ` ${escapeHtml(item.version)}` : "";
-    const suffix = item.date ? ` · ${escapeHtml(item.date)}` : "";
-    return `  <li>${nameHtml}${version}${suffix}</li>`;
-  });
-
-  return `<ul>\n${lines.join("\n")}\n</ul>`;
+function renderPosts(posts) {
+  return posts
+    .map((post) => {
+      const title = truncateMiddle(post.title, config.titleMaxLength);
+      return `<a href="${escapeHtml(post.url)}">${escapeHtml(title)}</a>`;
+    })
+    .join(" · ");
 }
 
 function releaseLabel(release) {
@@ -460,18 +362,6 @@ function releaseLabel(release) {
   const name = String(release.name || "").trim();
   const match = name.match(/v?\d+\.\d+\.\d+(?:[-+][\w.-]+)?/i);
   return match ? (match[0].startsWith("v") ? match[0] : `v${match[0]}`) : name;
-}
-
-function toDisplayName(value) {
-  return value
-    .split(/[-_]+/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
-function sortItems(items) {
-  return items.sort((a, b) => new Date(b.sortDate) - new Date(a.sortDate));
 }
 
 function truncateMiddle(value, maxLength) {
@@ -549,15 +439,18 @@ function sanitizePublicText(value) {
     .replace(/(?:\/[\w.-]+){2,}/g, "[redacted-path]");
 }
 
-function replaceBlock(readme, block) {
-  const start = readme.indexOf(START_MARKER);
-  const end = readme.indexOf(END_MARKER);
+function replaceMarked(text, marker, content) {
+  const startMarker = `<!-- ${marker}:START -->`;
+  const endMarker = `<!-- ${marker}:END -->`;
+  const start = text.indexOf(startMarker);
+  const end = text.indexOf(endMarker);
 
   if (start === -1 || end === -1 || end < start) {
-    return `${readme.trimEnd()}\n\n${block}\n`;
+    console.warn(`Warning: README has no ${marker} markers; skipping.`);
+    return text;
   }
 
-  return `${readme.slice(0, start)}${block}${readme.slice(
-    end + END_MARKER.length
+  return `${text.slice(0, start + startMarker.length)}${content}${text.slice(
+    end
   )}`;
 }
