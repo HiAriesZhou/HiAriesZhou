@@ -49,7 +49,7 @@ export async function checkSnapshots(snapshots, request) {
     const latest = normalizeVersion(release.tag_name);
     if (normalizeVersion(snapshot.releaseVersion) === latest) return [];
     return [{ title: snapshot.title, slug: snapshot.slug, current: snapshot.releaseVersion, latest,
-      url: `https://github.com/${repository}/releases/tag/${encodeURIComponent(release.tag_name)}` }];
+      url: `https://github.com/${repository}/releases/tag/${encodeURIComponent(release.tag_name).replace(/[()]/g, character => `%${character.charCodeAt(0).toString(16).toUpperCase()}`)}` }];
   }));
   return results.flat();
 }
