@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  # Supersede old PR checks; every main commit keeps its own run.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
