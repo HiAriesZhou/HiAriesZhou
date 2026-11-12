@@ -22,7 +22,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a></td>
 <td>Restores menu bar icons hidden by the notch</td>
-<td><!-- RELEASE:hairpin:START --><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.0">v0.3.0</a><br><sub>2026-11-04</sub><!-- RELEASE:hairpin:END --></td>
+<td><!-- RELEASE:hairpin:START --><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.3">v0.3.3</a><br><sub>2026-11-12</sub><!-- RELEASE:hairpin:END --></td>
 </tr>
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a></td>
@@ -32,12 +32,12 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/TMD">TMD</a></td>
 <td>Reads Markdown in the terminal. Editing, undo/redo and saving are planned.</td>
-<td><!-- RELEASE:tmd:START --><a href="https://github.com/HiAriesZhou/TMD/releases/tag/v0.1.5">v0.1.5</a><br><sub>2026-11-11</sub><!-- RELEASE:tmd:END --></td>
+<td><!-- RELEASE:tmd:START --><a href="https://github.com/HiAriesZhou/Gezi/releases/tag/v0.1.8">v0.1.8</a><br><sub>2026-11-12</sub><!-- RELEASE:tmd:END --></td>
 </tr>
 <tr>
 <td><a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a></td>
 <td>Lets AI tools search your notes and files</td>
-<td><!-- RELEASE:litecontext:START -->On going<!-- RELEASE:litecontext:END --></td>
+<td><!-- RELEASE:litecontext:START -->No release yet<!-- RELEASE:litecontext:END --></td>
 </tr>
 </table>
 
