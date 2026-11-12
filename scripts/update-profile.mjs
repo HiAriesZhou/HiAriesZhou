@@ -5,13 +5,14 @@ import { pathToFileURL } from "node:url";
 const README_PATH = process.env.README_PATH
   ? pathToFileURL(resolve(process.env.README_PATH))
   : new URL("../README.md", import.meta.url);
+const REQUEST_TIMEOUT_MS = 30_000;
 const POSTS_MARKER = "PROFILE_POSTS";
 const BOOKMARK_ASSISTANT_KEY = "bookmark-assistant";
 
 const config = {
   releaseRepos: parseReleaseRepos(
     process.env.RELEASE_REPOS ||
-    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler"
+    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler,HiAriesZhou/TMD"
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",
@@ -33,6 +34,8 @@ const [releaseResult, postResult] = await Promise.allSettled([
   getPosts(config.blogFeedUrl, config.postLimit),
 ]);
 
+const updateFailed =
+  releaseResult.status === "rejected" || postResult.status === "rejected";
 const releases = [
   ...(bookmarkAssistantRelease ? [bookmarkAssistantRelease] : []),
   ...valueOrWarn("releases", releaseResult, []),
@@ -51,6 +54,10 @@ const nextReadme =
 
 if (nextReadme !== readme) {
   await writeFile(README_PATH, nextReadme);
+}
+
+if (updateFailed) {
+  process.exitCode = 1;
 }
 
 async function loadBookmarkAssistantRelease() {
@@ -136,16 +143,13 @@ async function getReleases(repos, githubApiBaseUrl) {
     repos.map(async ({ owner, repo }) => {
       const url = `${githubApiBaseUrl}/repos/${owner}/${repo}/releases?per_page=10`;
       const response = await fetch(url, {
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         headers: {
           Accept: "application/vnd.github+json",
           "User-Agent": "Aries-0331-profile-updater",
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
       });
-
-      if (response.status === 404) {
-        return null;
-      }
 
       if (!response.ok) {
         throw new Error(
@@ -177,6 +181,7 @@ async function getReleases(repos, githubApiBaseUrl) {
 
 async function getPosts(feedUrl, limit) {
   const response = await fetch(feedUrl, {
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     headers: {
       Accept:
         "application/rss+xml, application/atom+xml, application/xml, text/xml",

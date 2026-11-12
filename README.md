@@ -30,6 +30,11 @@ Software engineer with nine years in data security and private cloud storage. I 
 <td><!-- RELEASE:howler:START --><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.14">v0.1.14</a><br><sub>2026-11-09</sub><!-- RELEASE:howler:END --></td>
 </tr>
 <tr>
+<td><a href="https://github.com/HiAriesZhou/TMD">TMD</a></td>
+<td>Reads Markdown in the terminal. Editing, undo/redo and saving are planned.</td>
+<td><!-- RELEASE:tmd:START --><a href="https://github.com/HiAriesZhou/TMD/releases/tag/v0.1.5">v0.1.5</a><br><sub>2026-11-11</sub><!-- RELEASE:tmd:END --></td>
+</tr>
+<tr>
 <td><a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a></td>
 <td>Lets AI tools search your notes and files</td>
 <td><!-- RELEASE:litecontext:START -->No release yet<!-- RELEASE:litecontext:END --></td>
