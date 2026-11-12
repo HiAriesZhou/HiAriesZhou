@@ -19,6 +19,12 @@ test('skips unpublished releases and public repositories without releases', asyn
   assert.deepEqual(await checkSnapshots([snapshot], async path => path.endsWith('/latest') ? response({}, 404) : response({ private: false })), []);
 });
 
+test('encodes parentheses in release links embedded in reminder Markdown', async () => {
+  const differences = await checkSnapshots([snapshot], async path =>
+    response(path.endsWith('/latest') ? { ...release, tag_name: 'v1.1.0)' } : { private: false }));
+  assert.equal(differences[0].url, 'https://github.com/example/tool/releases/tag/v1.1.0%29');
+});
+
 test('private repositories, API failures and malformed releases fail the check', async () => {
   for (const request of [async () => response({ private: true }), async () => response({}, 403), async () => response({}), async path => response(path.endsWith('/latest') ? {} : { private: false })]) {
     await assert.rejects(checkSnapshots([snapshot], request));
