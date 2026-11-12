@@ -2,13 +2,18 @@ name: Update profile
 
 on:
   schedule:
-    - cron: "15 0 * * *"
+    # Minute 17 avoids the crowded top of each hour. GitHub may delay scheduled runs.
+    - cron: "17 */3 * * *"
   workflow_dispatch:
   repository_dispatch:
     types: [bookmark-assistant-release, x-toc-release]
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
 
 jobs:
   update-profile:
@@ -29,7 +34,7 @@ jobs:
         run: node scripts/update-profile.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_REPOS: HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler
+          RELEASE_REPOS: HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler,HiAriesZhou/TMD
           BOOKMARK_ASSISTANT_RELEASE_PAYLOAD: ${{ toJson(github.event.client_payload) }}
           BLOG_FEED_URL: https://arieszhou.com/rss.en.xml
           POST_LIMIT: 3
