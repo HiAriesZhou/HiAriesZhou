@@ -14,6 +14,7 @@ permissions:
 concurrency:
   group: update-profile
   cancel-in-progress: false
+  queue: max
 
 jobs:
   update-profile:
@@ -31,6 +32,8 @@ jobs:
         run: node --test scripts/*.test.mjs
 
       - name: Update README activity
+        id: update
+        continue-on-error: true
         run: node scripts/update-profile.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,9 +44,18 @@ jobs:
           TITLE_MAX_LENGTH: 60
 
       - name: Commit changes
+        env:
+          UPDATE_OUTCOME: ${{ steps.update.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data/bookmark-assistant-release.json
+          git add data/bookmark-assistant-release.json
+          if [ "$UPDATE_OUTCOME" = "success" ]; then
+            git add README.md
+          fi
           git diff --cached --quiet || git commit -m "Update profile activity"
           git push
+
+      - name: Report refresh failure
+        if: steps.update.outcome == 'failure'
+        run: exit 1

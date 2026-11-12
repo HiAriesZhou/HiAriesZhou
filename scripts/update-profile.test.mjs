@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -35,9 +35,10 @@ const FEED = `<rss><channel>
 async function fixture(t, { releaseStatus = 200, feedStatus = 200, releases = RELEASES, feed = FEED, extraEnv = {} } = {}) {
   const dir = await mkdtemp(join(tmpdir(), "profile-sync-"));
   const readmePath = join(dir, "README.md");
-  const releasePath = join(dir, "bookmark.json");
+  const releasePath = join(dir, "data/bookmark-assistant-release.json");
   const requests = [];
   await writeFile(readmePath, README);
+  await mkdir(join(dir, "data"));
   await writeFile(releasePath, JSON.stringify({ version: "v1.4.3", url: "https://bookmarkassistant.com", published_at: "2026-10-05T09:09:54Z" }));
   const server = createServer((request, response) => {
     requests.push(request.url);
@@ -52,6 +53,7 @@ async function fixture(t, { releaseStatus = 200, feedStatus = 200, releases = RE
   });
   const base = `http://127.0.0.1:${server.address().port}`;
   return {
+    directory: dir,
     requests,
     readme: () => readFile(readmePath, "utf8"),
     savedRelease: async () => JSON.parse(await readFile(releasePath, "utf8")),
@@ -70,6 +72,41 @@ async function fixture(t, { releaseStatus = 200, feedStatus = 200, releases = RE
   };
 }
 const section = (text, key) => text.split(`<!-- ${key}:START -->`)[1].split(`<!-- ${key}:END -->`)[0];
+
+for (const failure of [null, "releases", "posts"]) {
+  test(`workflow persists dispatched metadata with ${failure || "no"} fetch failure`, async t => {
+    const context = await fixture(t, {
+      releaseStatus: failure === "releases" ? 500 : 200,
+      feedStatus: failure === "posts" ? 503 : 200,
+      extraEnv: { BOOKMARK_ASSISTANT_RELEASE_PAYLOAD: JSON.stringify({
+        version: "v1.5.0", published_at: "2026-11-10T08:00:00Z",
+      }) },
+    });
+    const git = (...args) => run("git", args, { cwd: context.directory });
+    await git("init", "--initial-branch=main");
+    await git("config", "user.name", "Test");
+    await git("config", "user.email", "test@example.com");
+    await git("config", "commit.gpgsign", "false");
+    await git("add", "README.md", "data/bookmark-assistant-release.json");
+    await git("commit", "-m", "Fixture");
+    await git("init", "--bare", "remote.git");
+    await git("remote", "add", "origin", join(context.directory, "remote.git"));
+    await git("push", "--set-upstream", "origin", "main");
+    const result = await context.run();
+    assert.equal(result.code, failure ? 1 : 0);
+    const workflow = await readFile(new URL("../.github/workflows/update-profile.yml", import.meta.url), "utf8");
+    const commitScript = workflow.match(/- name: Commit changes[\s\S]*?run: \|\n([\s\S]*?)(?=\n      - name:|\s*$)/)[1]
+      .replace(/^          /gm, "");
+    await run("bash", ["-e", "-c", commitScript], {
+      cwd: context.directory,
+      env: { ...process.env, UPDATE_OUTCOME: failure ? "failure" : "success" },
+    });
+    const committed = JSON.parse((await git("show", "origin/main:data/bookmark-assistant-release.json")).stdout);
+    assert.equal(committed.version, "v1.5.0");
+    const committedReadme = (await git("show", "origin/main:README.md")).stdout;
+    assert.equal(committedReadme, failure ? README : await context.readme());
+  });
+}
 
 test("writes each project's latest release, dates and three posts without altering static content", async t => {
   const context = await fixture(t);
