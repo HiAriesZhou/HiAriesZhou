@@ -5,7 +5,6 @@ import { pathToFileURL } from "node:url";
 const README_PATH = process.env.README_PATH
   ? pathToFileURL(resolve(process.env.README_PATH))
   : new URL("../README.md", import.meta.url);
-const REQUEST_TIMEOUT_MS = 30_000;
 const POSTS_MARKER = "PROFILE_POSTS";
 const BOOKMARK_ASSISTANT_KEY = "bookmark-assistant";
 const REQUEST_TIMEOUT_MS = 30_000;
@@ -35,8 +34,6 @@ const [releaseResult, postResult] = await Promise.allSettled([
   getPosts(config.blogFeedUrl, config.postLimit),
 ]);
 
-const updateFailed =
-  releaseResult.status === "rejected" || postResult.status === "rejected";
 const releases = [
   ...(bookmarkAssistantRelease ? [bookmarkAssistantRelease] : []),
   ...valueOrWarn("releases", releaseResult, []),
