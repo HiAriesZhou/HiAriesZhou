@@ -14,7 +14,7 @@ Keep README.md focused on the profile. Existing design notes live in docs/plans.
 
 ## Portfolio release reminders
 
-- The separate `check-product-releases.yml` workflow runs daily at 02:37 UTC and supports manual dispatch. It reads `https://www.arieszhou.com/products.json`, containing only reviewed public product names, slugs, versions and repository URLs. Deploy that feed before enabling the first check.
+- The separate `check-product-releases.yml` workflow supports manual dispatch. It reads `https://www.arieszhou.com/products.json`, containing only reviewed public product names, slugs, versions and repository URLs. The feed is not deployed yet, so the daily schedule is disabled. After deploying the feed and passing a read-only live check, enable the daily schedule at 02:37 UTC.
 - Run `node scripts/check-project-releases.mjs` for a read-only live report. `--write` uses `GITHUB_REPOSITORY` and the built-in `GITHUB_TOKEN` to maintain one bot-owned issue in this repository. Only this job has `issues: write`; it has no content write permission.
 - Public reads use no token. Invalid/empty feeds and API failures fail before issue writes; a public repository without a stable release is skipped. Identical differences cause no write; a successful check without differences closes the reminder. Manually closing an unresolved issue allows a new one next run.
 - The monitor compares latest stable GitHub Releases only. Products without a reviewed version are absent from the feed. Store availability, product descriptions and unreviewed translations still require editorial review. It never edits portfolio content or imports private repository data.
