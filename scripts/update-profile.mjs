@@ -8,6 +8,7 @@ const README_PATH = process.env.README_PATH
 const REQUEST_TIMEOUT_MS = 30_000;
 const POSTS_MARKER = "PROFILE_POSTS";
 const BOOKMARK_ASSISTANT_KEY = "bookmark-assistant";
+const REQUEST_TIMEOUT_MS = 30_000;
 
 const config = {
   releaseRepos: parseReleaseRepos(
@@ -41,6 +42,8 @@ const releases = [
   ...valueOrWarn("releases", releaseResult, []),
 ];
 const posts = valueOrWarn("posts", postResult, null);
+const updateFailed =
+  releaseResult.status === "rejected" || postResult.status === "rejected";
 
 const withReleases = releases.reduce(
   (text, release) =>
