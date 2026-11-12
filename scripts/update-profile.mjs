@@ -106,13 +106,13 @@ function parseBookmarkAssistantRelease(value) {
     return null;
   }
 
-  const publishedAt =
-    cleanText(payload.published_at) || new Date().toISOString();
+  const publishedAt = cleanText(payload.published_at);
 
   return {
     key: BOOKMARK_ASSISTANT_KEY,
     version,
     url: publicUrl(payload.url) || "https://bookmarkassistant.com/",
+    date: formatDate(publishedAt),
     publishedAt,
   };
 }
@@ -160,13 +160,14 @@ async function getReleases(repos, githubApiBaseUrl) {
         .sort(compareReleases)[0];
 
       if (!latestRelease) {
-        return null;
+        return { key: repo.toLowerCase(), version: "" };
       }
 
       return {
         key: repo.toLowerCase(),
         version: releaseLabel(latestRelease),
         url: latestRelease.html_url,
+        date: formatDate(latestRelease.published_at || latestRelease.created_at),
       };
     })
   );
@@ -337,20 +338,27 @@ function errorMessage(error) {
 }
 
 function renderRelease(release) {
+  if (!release.version) {
+    return "No release yet";
+  }
+
   const version = escapeHtml(release.version);
   const versionHtml = release.url
     ? `<a href="${escapeHtml(release.url)}">${version}</a>`
     : version;
-  return ` · ${versionHtml}`;
+  const date = release.date || "Date unavailable";
+  return `${versionHtml}<br><sub>${escapeHtml(date)}</sub>`;
 }
 
 function renderPosts(posts) {
   return posts
     .map((post) => {
-      const title = truncateMiddle(post.title, config.titleMaxLength);
-      return `<a href="${escapeHtml(post.url)}">${escapeHtml(title)}</a>`;
+      const title = escapeHtml(truncateMiddle(post.title, config.titleMaxLength))
+        .replace(/[\\`*_~\[\]]/g, (character) => `&#${character.charCodeAt(0)};`);
+      const date = escapeHtml(post.date || "Date unavailable");
+      return `<sub>${date}</sub> &nbsp; <a href="${escapeHtml(post.url)}">${title}</a>`;
     })
-    .join(" · ");
+    .join("<br>\n");
 }
 
 function releaseLabel(release) {

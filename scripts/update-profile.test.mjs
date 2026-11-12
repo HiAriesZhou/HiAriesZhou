@@ -13,11 +13,18 @@ const SCRIPT = fileURLToPath(new URL("./update-profile.mjs", import.meta.url));
 
 const README = `### Hi
 
-- Alpha — does a thing<!-- RELEASE:alpha:START --> · old<!-- RELEASE:alpha:END -->
-- Beta — not released<!-- RELEASE:beta:START --><!-- RELEASE:beta:END -->
-- Bookmark Assistant — sorts<!-- RELEASE:bookmark-assistant:START --><!-- RELEASE:bookmark-assistant:END -->
+<table>
+<tr><th>Project</th><th>Purpose</th><th>Latest release</th></tr>
+<tr><td>Alpha</td><td>does a thing</td><td><!-- RELEASE:alpha:START -->old<!-- RELEASE:alpha:END --></td></tr>
+<tr><td>Beta</td><td>not released</td><td><!-- RELEASE:beta:START -->No release yet<!-- RELEASE:beta:END --></td></tr>
+<tr><td>Bookmark Assistant</td><td>sorts</td><td><!-- RELEASE:bookmark-assistant:START -->No release yet<!-- RELEASE:bookmark-assistant:END --></td></tr>
+</table>
 
-**Writing** — <!-- PROFILE_POSTS:START -->old posts<!-- PROFILE_POSTS:END -->
+**Writing**
+
+<p>
+<!-- PROFILE_POSTS:START -->old posts<!-- PROFILE_POSTS:END -->
+</p>
 
 [Home](https://example.com/)
 `;
@@ -112,11 +119,20 @@ test("writes each project's latest release and the newest posts", async () => {
     readme,
     `### Hi
 
-- Alpha — does a thing<!-- RELEASE:alpha:START --> · <a href="https://github.com/o/Alpha/releases/tag/v1.10.0">v1.10.0</a><!-- RELEASE:alpha:END -->
-- Beta — not released<!-- RELEASE:beta:START --><!-- RELEASE:beta:END -->
-- Bookmark Assistant — sorts<!-- RELEASE:bookmark-assistant:START --> · <a href="https://bookmarkassistant.com/">v1.4.3</a><!-- RELEASE:bookmark-assistant:END -->
+<table>
+<tr><th>Project</th><th>Purpose</th><th>Latest release</th></tr>
+<tr><td>Alpha</td><td>does a thing</td><td><!-- RELEASE:alpha:START --><a href="https://github.com/o/Alpha/releases/tag/v1.10.0">v1.10.0</a><br><sub>2026-09-01</sub><!-- RELEASE:alpha:END --></td></tr>
+<tr><td>Beta</td><td>not released</td><td><!-- RELEASE:beta:START -->No release yet<!-- RELEASE:beta:END --></td></tr>
+<tr><td>Bookmark Assistant</td><td>sorts</td><td><!-- RELEASE:bookmark-assistant:START --><a href="https://bookmarkassistant.com/">v1.4.3</a><br><sub>2026-10-05</sub><!-- RELEASE:bookmark-assistant:END --></td></tr>
+</table>
 
-**Writing** — <!-- PROFILE_POSTS:START --><a href="https://arieszhou.com/blog/newest">Newest</a> · <a href="https://arieszhou.com/blog/middle">Middle</a> · <a href="https://arieszhou.com/blog/tom">Tom &amp; &quot;Jerry&quot;</a><!-- PROFILE_POSTS:END -->
+**Writing**
+
+<p>
+<!-- PROFILE_POSTS:START --><sub>2026-10-05</sub> &nbsp; <a href="https://arieszhou.com/blog/newest">Newest</a><br>
+<sub>2026-09-07</sub> &nbsp; <a href="https://arieszhou.com/blog/middle">Middle</a><br>
+<sub>2026-08-03</sub> &nbsp; <a href="https://arieszhou.com/blog/tom">Tom &amp; &quot;Jerry&quot;</a><!-- PROFILE_POSTS:END -->
+</p>
 
 [Home](https://example.com/)
 `
@@ -132,10 +148,65 @@ test("keeps the previous content when the requests fail", async () => {
   assert.equal(
     readme,
     README.replace(
-      "<!-- RELEASE:bookmark-assistant:START -->",
-      '<!-- RELEASE:bookmark-assistant:START --> · <a href="https://bookmarkassistant.com/">v1.4.3</a>'
+      '<!-- RELEASE:bookmark-assistant:START -->No release yet',
+      '<!-- RELEASE:bookmark-assistant:START --><a href="https://bookmarkassistant.com/">v1.4.3</a><br><sub>2026-10-05</sub>'
     )
   );
+});
+
+test("clears a removed release after a successful empty response", async () => {
+  const { readme } = await withServer((request, response) => {
+    if (request.url === "/rss.xml") {
+      response.statusCode = 500;
+      response.end("{}");
+      return;
+    }
+    response.end("[]");
+  }, runUpdater);
+
+  assert.ok(readme.includes("<!-- RELEASE:alpha:START -->No release yet<!-- RELEASE:alpha:END -->"));
+  assert.ok(readme.includes("<!-- PROFILE_POSTS:START -->old posts<!-- PROFILE_POSTS:END -->"));
+});
+
+test("encodes Markdown punctuation in inline article titles", async () => {
+  const { readme } = await withServer((request, response) => {
+    if (request.url === "/rss.xml") {
+      response.end(FEED.replace("Newest", "Use *stars* and _names_"));
+      return;
+    }
+    response.end("[]");
+  }, runUpdater);
+
+  assert.ok(readme.includes('>Use &#42;stars&#42; and &#95;names&#95;</a>'));
+});
+
+test("labels unknown dates without inventing a publication date", async () => {
+  const { readme } = await withServer((request, response) => {
+    if (request.url === "/rss.xml") {
+      response.end(FEED.replace(/<pubDate>[^<]*<\/pubDate>/g, "<pubDate>invalid</pubDate>"));
+      return;
+    }
+    response.end(JSON.stringify([{
+      tag_name: "v1.0.0",
+      html_url: "https://github.com/o/Alpha/releases/tag/v1.0.0",
+      published_at: "invalid",
+    }]));
+  }, runUpdater);
+
+  assert.ok(readme.includes('>v1.0.0</a><br><sub>Date unavailable</sub>'));
+  assert.ok(readme.includes('<sub>Date unavailable</sub> &nbsp; <a href='));
+});
+
+test("dispatch without a publication date keeps the date unknown", async () => {
+  const { readme, savedRelease } = await withServer((request, response) => {
+    response.statusCode = 500;
+    response.end("{}");
+  }, (baseUrl) => runUpdater(baseUrl, {
+    BOOKMARK_ASSISTANT_RELEASE_PAYLOAD: JSON.stringify({ version: "v1.5.0" }),
+  }));
+
+  assert.equal(savedRelease.published_at, "");
+  assert.ok(readme.includes('>v1.5.0</a><br><sub>Date unavailable</sub>'));
 });
 
 test("stores and shows a Bookmark Assistant release sent by dispatch", async () => {
@@ -161,6 +232,6 @@ test("stores and shows a Bookmark Assistant release sent by dispatch", async () 
   });
   assert.match(
     readme,
-    /<!-- RELEASE:bookmark-assistant:START --> · <a href="https:\/\/bookmarkassistant\.com\/changelog">v1\.5\.0<\/a><!-- RELEASE:bookmark-assistant:END -->/
+    /<!-- RELEASE:bookmark-assistant:START --><a href="https:\/\/bookmarkassistant\.com\/changelog">v1\.5\.0<\/a><br><sub>2026-11-10<\/sub><!-- RELEASE:bookmark-assistant:END -->/
   );
 });
