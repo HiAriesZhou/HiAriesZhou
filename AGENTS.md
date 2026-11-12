@@ -9,8 +9,8 @@ Keep README.md focused on the profile. Existing design notes live in docs/plans.
 - Run `node scripts/update-profile.mjs` from the repository root to refresh the README from public GitHub Releases and the English RSS feed. This contacts live services and may modify README.md.
 - Keep existing products, the English RSS feed, per-product release cells, and the three-post limit unless the task explicitly changes them. Add a public product to both `releaseRepos` in the script and `RELEASE_REPOS` in the workflow, with a matching `RELEASE:<lowercase-repo>` cell in README.md. Use its published name and describe only released features.
 - The workflow runs every three hours at minute 17 UTC, or on manual and supported repository dispatch events. Scheduled runs may be delayed by GitHub.
-- The workflow uses `GITHUB_TOKEN` with `contents: write` to commit README.md and the public Bookmark Assistant release metadata. Preserve that narrow file list. Workflow tests run before live updates; failed fetches retain the affected section and fail the job before commit.
-- Workflow runs share a concurrency group to avoid overlapping pushes. Recheck repository rules before changing the push mechanism. If a future rule requires pull requests for the bot, report the conflict rather than weakening protection or adding a credential.
+- The workflow uses `GITHUB_TOKEN` with `contents: write` to commit README.md and the public Bookmark Assistant release metadata. Preserve that narrow file list. Workflow tests run before live updates; failed fetches prevent README commits, but validated dispatch metadata is committed before the job reports failure so a later refresh can recover it.
+- Workflow runs share a concurrency group with `queue: max` to serialize pushes without replacing pending release dispatches (up to GitHub's 100-pending-run limit). Recheck repository rules before changing the push mechanism. If a future rule requires pull requests for the bot, report the conflict rather than weakening protection or adding a credential.
 
 ## Portfolio release reminders
 
