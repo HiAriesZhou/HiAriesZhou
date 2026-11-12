@@ -3,7 +3,7 @@
 Software engineer with nine years in data security and private cloud storage. I build small tools for everyday problems and ship them in public.
 
 <table width="100%">
-<tr><th align="left">Project</th><th align="left">What it does</th><th align="left" width="110">Latest release</th></tr>
+<tr><th align="left">Project</th><th align="left">What it does</th><th align="left" width="110">Latest</th></tr>
 <tr>
 <td><a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a></td>
 <td>A table of contents and clipper for X Articles</td>
@@ -37,7 +37,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a></td>
 <td>Lets AI tools search your notes and files</td>
-<td><!-- RELEASE:litecontext:START -->No release yet<!-- RELEASE:litecontext:END --></td>
+<td><!-- RELEASE:litecontext:START -->On going<!-- RELEASE:litecontext:END --></td>
 </tr>
 </table>
 
