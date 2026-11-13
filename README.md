@@ -32,7 +32,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/TMD">TMD</a></td>
 <td>Reads Markdown in the terminal. Editing, undo/redo and saving are planned.</td>
-<td><!-- RELEASE:tmd:START --><a href="https://github.com/HiAriesZhou/Gezi/releases/tag/v0.1.8">v0.1.8</a><br><sub>2026-11-12</sub><!-- RELEASE:tmd:END --></td>
+<td><!-- RELEASE:tmd:START --><a href="https://github.com/HiAriesZhou/Gezi/releases/tag/v0.1.9">v0.1.9</a><br><sub>2026-11-13</sub><!-- RELEASE:tmd:END --></td>
 </tr>
 <tr>
 <td><a href="https://litecontext.dev/"><img src="assets/projects/litecontext.png" width="18" height="18" align="absmiddle" alt="LiteContext icon"> LiteContext</a></td>
