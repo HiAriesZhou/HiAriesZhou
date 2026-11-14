@@ -27,7 +27,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Howler"><img src="assets/projects/howler.png" width="18" height="18" align="absmiddle" alt="Howler icon"> Howler</a></td>
 <td>Quick AI answers in a letter that burns once read</td>
-<td><!-- RELEASE:howler:START --><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.14">v0.1.14</a><br><sub>2026-11-09</sub><!-- RELEASE:howler:END --></td>
+<td><!-- RELEASE:howler:START --><a href="https://github.com/HiAriesZhou/Howler/releases/tag/v0.1.15">v0.1.15</a><br><sub>2026-11-14</sub><!-- RELEASE:howler:END --></td>
 </tr>
 <tr>
 <td><a href="https://github.com/HiAriesZhou/TMD">TMD</a></td>
