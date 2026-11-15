@@ -12,7 +12,7 @@ const REQUEST_TIMEOUT_MS = 30_000;
 const config = {
   releaseRepos: parseReleaseRepos(
     process.env.RELEASE_REPOS ||
-    "HiAriesZhou/xtoc,HiAriesZhou/litecontext,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler,HiAriesZhou/TMD"
+    "HiAriesZhou/xtoc,HiAriesZhou/DashBye,HiAriesZhou/Hairpin,HiAriesZhou/Howler,HiAriesZhou/Gezi"
   ),
   blogFeedUrl:
     process.env.BLOG_FEED_URL || "https://arieszhou.com/rss.en.xml",

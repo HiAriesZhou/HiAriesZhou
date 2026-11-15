@@ -14,7 +14,7 @@ const README = `### Hi
 <table>
 <tr><td>Alpha</td><td><!-- RELEASE:alpha:START -->old<!-- RELEASE:alpha:END --></td></tr>
 <tr><td>Beta</td><td><!-- RELEASE:beta:START -->No release yet<!-- RELEASE:beta:END --></td></tr>
-<tr><td>TMD</td><td><!-- RELEASE:tmd:START -->old<!-- RELEASE:tmd:END --></td></tr>
+<tr><td>Gezi</td><td><!-- RELEASE:gezi:START -->old<!-- RELEASE:gezi:END --></td></tr>
 <tr><td>Bookmark Assistant</td><td><!-- RELEASE:bookmark-assistant:START -->No release yet<!-- RELEASE:bookmark-assistant:END --></td></tr>
 </table>
 <p><!-- PROFILE_POSTS:START -->old posts<!-- PROFILE_POSTS:END --></p>
@@ -122,12 +122,12 @@ test("writes each project's latest release, dates and three posts without alteri
   assert.equal(await context.readme(), readme);
 });
 
-test("defaults include TMD and preserve the existing release sources", async t => {
+test("defaults track Gezi and the published projects without requesting TMD or LiteContext", async t => {
   const context = await fixture(t, { extraEnv: { RELEASE_REPOS: "" } });
   assert.equal((await context.run()).code, 0);
   assert.deepEqual(context.requests.filter(url => url !== "/rss.xml").map(url => url.split("/")[3]).sort(),
-    ["xtoc", "litecontext", "DashBye", "Hairpin", "Howler", "TMD"].sort());
-  assert.match(section(await context.readme(), "RELEASE:tmd"), /v1\.10\.0/);
+    ["xtoc", "DashBye", "Hairpin", "Howler", "Gezi"].sort());
+  assert.match(section(await context.readme(), "RELEASE:gezi"), /v1\.10\.0/);
 });
 
 for (const status of [404, 500]) {
