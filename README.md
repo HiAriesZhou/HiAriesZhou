@@ -12,7 +12,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Hairpin"><img src="assets/projects/hairpin.png" width="18" height="18" align="absmiddle" alt="Hairpin icon"> Hairpin</a></td>
 <td>Restores menu bar icons hidden by the notch</td>
-<td><!-- RELEASE:hairpin:START --><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.3">v0.3.3</a><br><sub>2026-11-12</sub><!-- RELEASE:hairpin:END --></td>
+<td><!-- RELEASE:hairpin:START --><a href="https://github.com/HiAriesZhou/Hairpin/releases/tag/v0.3.4">v0.3.4</a><br><sub>2026-11-15</sub><!-- RELEASE:hairpin:END --></td>
 </tr>
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Gezi"><img src="assets/projects/gezi.png" width="18" height="18" align="absmiddle" alt="Gezi icon"> Gezi</a></td>
