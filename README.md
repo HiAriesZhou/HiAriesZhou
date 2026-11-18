@@ -17,7 +17,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://github.com/HiAriesZhou/Gezi"><img src="assets/projects/gezi.png" width="18" height="18" align="absmiddle" alt="Gezi icon"> Gezi</a></td>
 <td>A Kaku-first terminal Markdown editor. Reading and rendering today; editing next.</td>
-<td><!-- RELEASE:gezi:START --><a href="https://github.com/HiAriesZhou/Gezi/releases/tag/v0.1.15">v0.1.15</a><br><sub>2026-11-17</sub><!-- RELEASE:gezi:END --></td>
+<td><!-- RELEASE:gezi:START --><a href="https://github.com/HiAriesZhou/Gezi/releases/tag/v0.1.16">v0.1.16</a><br><sub>2026-11-18</sub><!-- RELEASE:gezi:END --></td>
 </tr>
 <tr>
 <td><a href="https://github.com/HiAriesZhou/xtoc"><img src="assets/projects/xtoc.png" width="18" height="18" align="absmiddle" alt="XTOC icon"> XTOC</a></td>
