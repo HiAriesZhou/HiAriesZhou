@@ -39,9 +39,9 @@ Software engineer with nine years in data security and private cloud storage. I 
 **Recent writing**
 
 <p>
-<!-- PROFILE_POSTS:START --><sub>2026-11-09</sub> &nbsp; <a href="https://www.arieszhou.com/blog/do-you-still-need-a-terminal-why-i-chose-kaku">Do You Still Need a Terminal? Why I Chose Kaku</a><br>
-<sub>2026-10-14</sub> &nbsp; <a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a><br>
-<sub>2026-09-07</sub> &nbsp; <a href="https://www.arieszhou.com/blog/from-a-rooftop-in-dali-to-pixel-avatars">A rooftop in Dali.</a><!-- PROFILE_POSTS:END -->
+<!-- PROFILE_POSTS:START --><sub>2026-11-21</sub> &nbsp; <a href="https://www.arieszhou.com/blog/my-tired-prefrontal-cortex">My Tired Prefrontal Cortex</a><br>
+<sub>2026-11-09</sub> &nbsp; <a href="https://www.arieszhou.com/blog/do-you-still-need-a-terminal-why-i-chose-kaku">Do You Still Need a Terminal? Why I Chose Kaku</a><br>
+<sub>2026-10-14</sub> &nbsp; <a href="https://www.arieszhou.com/blog/after-reverse-engineering-gets-easy">REA and Reverse Engineering</a><!-- PROFILE_POSTS:END -->
 </p>
 
 [Home](https://arieszhou.com/) · [About](https://arieszhou.com/about) · [X](https://x.com/AriesZhou)
