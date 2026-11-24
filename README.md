@@ -32,7 +32,7 @@ Software engineer with nine years in data security and private cloud storage. I 
 <tr>
 <td><a href="https://bookmarkassistant.com/"><img src="assets/projects/bookmark-assistant.png" width="18" height="18" align="absmiddle" alt="Bookmark Assistant icon"> Bookmark Assistant</a></td>
 <td>Organizes bookmarks so they get used</td>
-<td><!-- RELEASE:bookmark-assistant:START --><a href="https://bookmarkassistant.com/">v1.4.3</a><br><sub>2026-10-05</sub><!-- RELEASE:bookmark-assistant:END --></td>
+<td><!-- RELEASE:bookmark-assistant:START --><a href="https://bookmarkassistant.com/">v1.4.4</a><br><sub>2026-10-12</sub><!-- RELEASE:bookmark-assistant:END --></td>
 </tr>
 </table>
 
